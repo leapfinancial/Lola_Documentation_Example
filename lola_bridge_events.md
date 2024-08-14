@@ -9,7 +9,7 @@ This document contains the example json for the different cases of the events
 3) Both
 4) Accept
 
-Requests should be to this url
+Requests should be to this endpoint
 https://lola-bridge-development.up.railway.app/v1/eventManager/init-operation
 
 ## Actions from case
