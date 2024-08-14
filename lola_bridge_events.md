@@ -74,8 +74,7 @@ The parameter that defines the event will be event_case which can only have the 
         "pending_payment_method": {
             "card": "boolean",
             "CLABE": "boolean"
-        },
-        "pending_user_data" : ["all"]
+        }
     }
 }
 ```
@@ -128,12 +127,7 @@ The parameter that defines the event will be event_case which can only have the 
     },
     "receiver": {
         "organization_id": "string",
-        "phone": "string",
-        "pending_payment_method": {
-            "card": "boolean",
-            "CLABE": "boolean"
-        },
-        "pending_user_data" : []
+        "phone": "string"
     }
 }
 ```
