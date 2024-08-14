@@ -17,7 +17,7 @@ The parameter that defines the event will be event_case which can only have the 
 
 | Case | Param event_case values |
 | ------ |------|
-| 1) Missing user data | add_user |
+| 1) Missing user data | update_user |
 | 2) Missing Deposit method | add_payment_method |
 | 3) Both | add_user_and_payment_method |
 | 4) Accept | accept_payment |
@@ -25,7 +25,7 @@ The parameter that defines the event will be event_case which can only have the 
 ## Case 1 : Missing user data (no support) 
 ```json
 {
-    "event_case": "add_user",
+    "event_case": "update_user",
     "sender": {
         "organization_id": "string",
         "organization_name": "string",
