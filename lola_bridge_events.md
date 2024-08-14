@@ -10,7 +10,7 @@ This document contains the example json for the different cases of the events
 4) Accept
 
 Requests should be to this url
-https://host/v1/eventManager/init-operation
+https://lola-bridge-development.up.railway.app/v1/eventManager/init-operation
 
 ## Actions from case
 The parameter that defines the event will be event_case which can only have the following values.
