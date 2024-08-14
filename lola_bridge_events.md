@@ -9,6 +9,9 @@ This document contains the example json for the different cases of the events
 3) Both
 4) Accept
 
+Requests should be to this url
+https://host/v1/eventManager/init-operation
+
 ## Actions from case
 The parameter that defines the event will be event_case which can only have the following values.
 
@@ -20,7 +23,7 @@ The parameter that defines the event will be event_case which can only have the 
 | 4) Accept | accept_payment |
 
 ## Case 1 : Missing user data (no support) 
-```sh
+```json
 {
     "event_case": "add_user",
     "sender": {
@@ -28,7 +31,7 @@ The parameter that defines the event will be event_case which can only have the 
         "organization_name": "string",
         "phone_number": "string",
         "sender_name": "string"
-    }
+    },
     "tx": {
         "amount": "number",
         "country_origin": "string alpha2",
@@ -43,13 +46,13 @@ The parameter that defines the event will be event_case which can only have the 
             "card": "boolean",
             "CLABE": "boolean"
         },
-        pending_user_data : ["name", "last_name","DOB","gender", "Address"]
+        "pending_user_data" : ["name", "last_name","DOB","gender", "Address"]
     }
 }
 ```
 
 ## Case 2 : Missing Deposit method
-```sh
+```json
 {
     "event_case": "add_payment_method",
     "sender": {
@@ -57,7 +60,7 @@ The parameter that defines the event will be event_case which can only have the 
         "organization_name": "string",
         "phone_number": "string",
         "sender_name": "string"
-    }
+    },
     "tx": {
         "amount": "number",
         "country_origin": "string alpha2",
@@ -72,13 +75,13 @@ The parameter that defines the event will be event_case which can only have the 
             "card": "boolean",
             "CLABE": "boolean"
         },
-        pending_user_data : ["all"]
+        "pending_user_data" : ["all"]
     }
 }
 ```
 
 ## Case 3 : Both
-```sh
+```json
 {
     "event_case": "add_user_and_payment_method",
     "sender": {
@@ -86,7 +89,7 @@ The parameter that defines the event will be event_case which can only have the 
         "organization_name": "string",
         "phone_number": "string",
         "sender_name": "string"
-    }
+    },
     "tx": {
         "amount": "number",
         "country_origin": "string alpha2",
@@ -101,12 +104,13 @@ The parameter that defines the event will be event_case which can only have the 
             "card": "boolean",
             "CLABE": "boolean"
         },
-        pending_user_data : ["all"]
+        "pending_user_data" : ["all"]
     }
 }
 ```
+
 ## Case 4 : Accept
-```sh
+```json
 {
     "event_case": "accept_payment",
     "sender": {
@@ -114,7 +118,7 @@ The parameter that defines the event will be event_case which can only have the 
         "organization_name": "string",
         "phone_number": "string",
         "sender_name": "string"
-    }
+    },
     "tx": {
         "amount": "number",
         "country_origin": "string alpha2",
@@ -129,7 +133,37 @@ The parameter that defines the event will be event_case which can only have the 
             "card": "boolean",
             "CLABE": "boolean"
         },
-        pending_user_data : []
+        "pending_user_data" : []
     }
+}
+```
+
+### All cases respond with the same format
+#### Example Response Success
+
+```json
+{
+    "status": "success",
+    "code_transaction": "4ac78c51"
+}
+```
+#### Example Response Error
+
+```json
+{
+    "detail": [
+        {
+            "field": "amount",
+            "message": "Input should be a valid number, unable to parse string as a number"
+        },
+        {
+            "field": "card",
+            "message": "Input should be a valid boolean, unable to interpret input"
+        },
+        {
+            "field": "CLABE",
+            "message": "Input should be a valid boolean, unable to interpret input"
+        }
+    ]
 }
 ```
