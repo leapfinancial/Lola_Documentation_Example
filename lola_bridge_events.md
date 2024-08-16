@@ -137,8 +137,9 @@ The parameter that defines the event will be event_case which can only have the 
 
 ```json
 {
-    "status": "success",
-    "code_transaction": "4ac78c51"
+  "status": "success",
+  "code_transaction": "d2fa8f99",
+  "urltransaccion": "https://lola-bridge-development.up.railway.app/v1/eventManager/url?codeTX=d2fa8f99"
 }
 ```
 #### Example Response Error
