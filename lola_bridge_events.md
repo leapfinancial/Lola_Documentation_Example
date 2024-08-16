@@ -139,7 +139,7 @@ The parameter that defines the event will be event_case which can only have the 
 {
   "status": "success",
   "code_transaction": "d2fa8f99",
-  "urltransaccion": "https://lola-bridge-development.up.railway.app/v1/eventManager/url?codeTX=d2fa8f99"
+  "url_transaccion": "https://lola-bridge-development.up.railway.app/v1/eventManager/url?codeTX=d2fa8f99"
 }
 ```
 #### Example Response Error
